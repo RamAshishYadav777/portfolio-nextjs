@@ -2,12 +2,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050505;
+  --background: #030014;
   --foreground: #f8fafc;
-  --accent: #06b6d4;
-  --accent-glow: rgba(6, 182, 212, 0.4);
-  --glass-bg: rgba(10, 10, 10, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.05);
+  --accent: #22d3ee;
+  --accent-secondary: #818cf8;
+  --neon-purple: #a855f7;
+  --metallic-gold: #fbbf24;
+  --glass-bg: rgba(255, 255, 255, 0.02);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-reflection: linear-gradient(135deg, rgba(168, 85, 247, 0.1), transparent 40%, transparent 60%, rgba(251, 191, 36, 0.05));
 }
 
 @theme {
@@ -20,6 +23,7 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
@@ -38,20 +42,79 @@ h4,
   letter-spacing: -0.04em;
 }
 
+/* Premium Glassmorphism */
 .glass {
   background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
   border: 1px solid var(--glass-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--glass-reflection);
+  pointer-events: none;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(34, 211, 238, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.9);
+}
+
+/* Noise Texture Overlay */
+.noise {
+  position: fixed;
+  inset: 0;
+  background: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 50;
+  mix-blend-mode: overlay;
+}
+
+/* Moving Mesh Background */
+.mesh-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  filter: blur(120px);
+  opacity: 0.2;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  z-index: -1;
+  animation: move 25s infinite alternate;
+}
+
+@keyframes move {
+  0% {
+    transform: translate(-20%, -20%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(20%, 20%) rotate(180deg);
+  }
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #06b6d4, #3b82f6, #06b6d4);
+  background: linear-gradient(135deg, #22d3ee 0%, #818cf8 50%, #22d3ee 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 4s linear infinite;
+  animation: shine 6s linear infinite;
 }
 
 @keyframes shine {
@@ -60,53 +123,131 @@ h4,
   }
 }
 
-.bg-mesh {
-  background-image: radial-gradient(at 0% 0%, rgba(6, 182, 212, 0.1) 0, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.1) 0, transparent 50%);
-}
-
 .bg-grid {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
 }
 
-@keyframes scan {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
+.bg-dot {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
 
-  50% {
-    opacity: 0.5;
-  }
+/* Scroll Animations Meta-Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
 
-  100% {
-    transform: translateY(200%);
-    opacity: 0;
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  filter: drop-shadow(0 0 15px rgba(34, 211, 238, 0.4));
+}
+
+/* 3D Track Effect */
+.track-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 10s linear infinite;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
   }
 }
 
-@keyframes float {
+.sphere-float {
+  filter: drop-shadow(0 0 15px var(--neon-purple));
+}
+
+.sphere-glow-purple {
+  background: radial-gradient(circle at 30% 30%, #d8b4fe, #a855f7);
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.4), inset -5px -5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.sphere-glow-gold {
+  background: radial-gradient(circle at 30% 30%, #fde68a, #fbbf24);
+  box-shadow: 0 0 40px rgba(251, 191, 36, 0.4), inset -5px -5px 15px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes float-around {
 
   0%,
   100% {
-    transform: translateY(0);
+    transform: translateY(0) translateX(0);
+  }
+
+  25% {
+    transform: translateY(-20px) translateX(10px);
   }
 
   50% {
-    transform: translateY(-15px);
+    transform: translateY(10px) translateX(-15px);
+  }
+
+  75% {
+    transform: translateY(-10px) translateX(20px);
   }
 }
 
-.animate-scan {
-  animation: scan 3s ease-in-out infinite;
+.animate-float-slow {
+  animation: float-around 20s ease-in-out infinite;
 }
 
-.animate-float {
-  animation: float 4s ease-in-out infinite;
+/* Slow Spin Animation for Orbiting Elements */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.animate-slow-spin {
-  animation: spin 10s linear infinite;
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Animated Gradient Text */
+@keyframes gradient-x {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 3s ease infinite;
+}
+
+/* Enhanced Glow Effects */
+.glow-cyan {
+  filter: drop-shadow(0 0 20px rgba(34, 211, 238, 0.4));
+}
+
+.glow-purple {
+  filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.4));
+}
+
+.glow-amber {
+  filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.4));
 }

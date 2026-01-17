@@ -18,6 +18,33 @@ export const metadata: Metadata = {
   title: "Ram Ashish Yadav | MERN Stack Developer Portfolio",
   description: "Senior MERN Stack Developer specializing in high-performance web applications using Next.js, React, Node.js, and Supabase.",
   keywords: ["Ram Ashish Yadav", "Full Stack Developer", "MERN Stack", "Next.js", "Portfolio", "Web Developer"],
+  authors: [{ name: "Ram Ashish Yadav" }],
+  creator: "Ram Ashish Yadav",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://portfolio-nextjs-prky.vercel.app/",
+    title: "Ram Ashish Yadav | MERN Stack Developer Portfolio",
+    description: "Senior MERN Stack Developer specializing in high-performance web applications using Next.js, React, Node.js, and Supabase.",
+    siteName: "Ram Ashish Yadav Portfolio",
+    images: [
+      {
+        url: "/og-image.png", // Ensure you have an og-image.png in public folder or remove this line
+        width: 1200,
+        height: 630,
+        alt: "Ram Ashish Yadav Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ram Ashish Yadav | MERN Stack Developer Portfolio",
+    description: "Senior MERN Stack Developer specializing in high-performance web applications using Next.js, React, Node.js, and Supabase.",
+    images: ["/og-image.png"],
+  },
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({

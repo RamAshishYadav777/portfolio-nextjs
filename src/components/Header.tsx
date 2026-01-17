@@ -31,18 +31,21 @@ const Header = () => {
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Branding */}
-        <Link href="/" className="flex items-center gap-4 group">
-          <div className="relative overflow-hidden w-12 h-12 flex items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 p-[1px] group-hover:scale-110 transition-transform duration-500 shadow-xl shadow-cyan-500/10">
-            <div className="w-full h-full bg-[#050505] rounded-[15px] flex items-center justify-center">
-              <span className="text-white font-black text-xl italic tracking-tighter">RY</span>
+        {/* Enhanced Branding */}
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="relative">
+            {/* Glow Effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 to-amber-500/30 rounded-xl blur-md group-hover:blur-lg transition-all"></div>
+            {/* Logo */}
+            <div className="relative w-11 h-11 flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 via-indigo-500 to-amber-500 shadow-xl shadow-purple-500/20 border border-white/10 group-hover:scale-105 transition-transform duration-300">
+              <span className="text-white font-black text-base tracking-tighter">RY</span>
             </div>
           </div>
           <div className="flex flex-col">
-            <span className="text-xl font-black text-white tracking-widest uppercase leading-none mb-1 group-hover:text-cyan-400 transition-colors">Ram Ashish</span>
+            <span className="text-lg font-black text-white tracking-tight leading-none mb-0.5 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-amber-400 group-hover:bg-clip-text transition-all">Ram Ashish</span>
             <div className="flex items-center gap-2">
-              <span className="h-[1px] w-4 bg-cyan-500"></span>
-              <span className="text-[9px] font-black text-white/40 tracking-[0.4em] uppercase">Full Stack Developer</span>
+              <span className="h-[1px] w-3 bg-gradient-to-r from-purple-500 to-amber-500"></span>
+              <span className="text-[8px] font-black text-white/40 tracking-[0.3em] uppercase">Full Stack Developer</span>
             </div>
           </div>
         </Link>
@@ -61,10 +64,16 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Action Button (Optional but adds premium feel) */}
-        <div className="hidden lg:block">
-          <a href="#contact" className="px-8 py-3 rounded-xl bg-white text-black text-[10px] font-black uppercase tracking-[0.2em] hover:bg-cyan-400 transition-colors shadow-xl shadow-white/5">
-            Hire Me
+        {/* Enhanced Action Button */}
+        <div className="hidden lg:block relative group/hire">
+          {/* Animated Glow Ring */}
+          <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 via-amber-500 to-purple-500 rounded-xl opacity-75 group-hover/hire:opacity-100 blur group-hover/hire:blur-md transition-all animate-pulse"></div>
+          <a
+            href="#contact"
+            className="relative px-8 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-amber-500 text-white text-[10px] font-black uppercase tracking-[0.2em] hover:scale-105 transition-all shadow-2xl shadow-purple-500/50 flex items-center gap-2 group-hover/hire:gap-3"
+          >
+            <span className="relative z-10">Hire Me</span>
+            <span className="relative z-10 text-xs group-hover/hire:translate-x-1 transition-transform">→</span>
           </a>
         </div>
 
