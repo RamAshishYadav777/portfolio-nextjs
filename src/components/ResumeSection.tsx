@@ -48,9 +48,8 @@ const ResumeSection = () => {
                                 </a>
                             </div>
 
-                            <div className='mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 w-full border-t border-white/5 pt-16'>
+                            <div className='mt-16 grid grid-cols-2 md:grid-cols-3 gap-8 w-full border-t border-white/5 pt-16'>
                                 {[
-                                    { label: 'Experience', value: '2+ Years' },
                                     { label: 'Projects', value: '15+ Completed' },
                                     { label: 'Response', value: '24 Hours' },
                                     { label: 'Locations', value: 'Remote / India' }

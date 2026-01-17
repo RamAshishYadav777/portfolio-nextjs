@@ -26,8 +26,8 @@ const ProjectsSection = () => {
         {
             title: "Modern Portfolio",
             description: "A premium developer portfolio showcasing high-performance engineering and aesthetic design. Built with Next.js 16 and Tailwind CSS 4, featuring advanced glassmorphism and smooth animations.",
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426",
-            link: "https://portfolio-nextjs-psi-topaz.vercel.app/",
+            image: "/images/portfolio-preview.png",
+            link: "https://portfolio-nextjs-prky.vercel.app/",
             github: "https://github.com/RamAshishYadav777/portfolio-nextjs",
             tech: ["Next.js 16", "React 19", "Tailwind CSS 4", "GSAP"]
         }
