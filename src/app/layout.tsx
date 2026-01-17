@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://portfolio-nextjs-prky.vercel.app/"),
   title: "Ram Ashish Yadav | MERN Stack Developer Portfolio",
   description: "Senior MERN Stack Developer specializing in high-performance web applications using Next.js, React, Node.js, and Supabase.",
   keywords: ["Ram Ashish Yadav", "Full Stack Developer", "MERN Stack", "Next.js", "Portfolio", "Web Developer"],
