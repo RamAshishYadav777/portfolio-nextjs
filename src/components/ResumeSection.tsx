@@ -36,7 +36,7 @@ const ResumeSection = () => {
                                 <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-ping"></div>
                             </div>
 
-                            <h2 className='text-5xl md:text-7xl lg:text-8xl font-display font-black text-white mb-8 tracking-tight leading-[0.9]'>
+                            <h2 className='text-4xl md:text-7xl lg:text-8xl font-display font-black text-white mb-8 tracking-tight leading-[0.9]'>
                                 MY <br />
                                 <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 animate-gradient-x'>
                                     RESUME.
@@ -51,15 +51,15 @@ const ResumeSection = () => {
                                 </p>
                             </div>
 
-                            <div className='flex flex-wrap gap-6 mb-12'>
+                            <div className='flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 mb-12 w-full'>
                                 <a
                                     href="/RAM%20ASHISH%20CV.pdf"
                                     download="RAM ASHISH CV.pdf"
-                                    className='group relative px-10 py-5 rounded-2xl bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-black uppercase tracking-[0.3em] text-[10px] shadow-2xl shadow-cyan-500/30 hover:-translate-y-2 transition-all flex items-center gap-3 hover:shadow-cyan-500/50 active:scale-95 overflow-hidden'
+                                    className='group relative px-8 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-black uppercase tracking-[0.3em] text-[8px] sm:text-[10px] shadow-2xl shadow-cyan-500/30 hover:-translate-y-2 transition-all flex items-center justify-center gap-3 hover:shadow-cyan-500/50 active:scale-95 overflow-hidden w-full sm:w-auto'
                                 >
                                     {/* Shimmer */}
                                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                                    <FaDownload className='text-lg group-hover:animate-bounce' />
+                                    <FaDownload className='text-base sm:text-lg group-hover:animate-bounce' />
                                     <span className="relative z-10">Download CV</span>
                                 </a>
 
@@ -67,9 +67,9 @@ const ResumeSection = () => {
                                     href="/RAM%20ASHISH%20CV.pdf"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className='group px-10 py-5 rounded-2xl glass border border-white/10 text-white font-black uppercase tracking-[0.3em] text-[10px] hover:border-purple-500/50 hover:bg-purple-500/10 transition-all flex items-center gap-3 hover:-translate-y-2 active:scale-95 shadow-2xl shadow-purple-500/5 hover:shadow-purple-500/20'
+                                    className='group px-8 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl glass border border-white/10 text-white font-black uppercase tracking-[0.3em] text-[8px] sm:text-[10px] hover:border-purple-500/50 hover:bg-purple-500/10 transition-all flex items-center justify-center gap-3 hover:-translate-y-2 active:scale-95 shadow-2xl shadow-purple-500/5 hover:shadow-purple-500/20 w-full sm:w-auto'
                                 >
-                                    <FaEye className='text-lg text-purple-400 group-hover:scale-110 transition-transform' />
+                                    <FaEye className='text-base sm:text-lg text-purple-400 group-hover:scale-110 transition-transform' />
                                     View Online
                                 </a>
                             </div>

@@ -45,7 +45,7 @@ const ContactSection = () => {
                 <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></div>
               </div>
 
-              <h2 className='text-5xl md:text-7xl lg:text-8xl font-display font-black text-white leading-tight mb-8'>
+              <h2 className='text-4xl md:text-7xl lg:text-8xl font-display font-black text-white leading-tight mb-8'>
                 Let's build something <br />
                 <span className='text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 animate-gradient-x'>
                   extraordinary.
@@ -58,7 +58,7 @@ const ContactSection = () => {
             </div>
 
             {/* Main Card */}
-            <div className='glass glass-card p-1 md:p-12 rounded-[3.5rem] border border-white/5 relative overflow-hidden group/card'>
+            <div className='glass glass-card p-6 md:p-12 rounded-[2rem] md:rounded-[3.5rem] border border-white/5 relative overflow-hidden group/card'>
               {/* Background Glow */}
               <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent"></div>
               <div className="absolute -top-24 -right-24 w-64 h-64 bg-cyan-500/20 blur-[100px] rounded-full group-hover/card:bg-cyan-500/30 transition-all duration-700"></div>
@@ -76,7 +76,7 @@ const ContactSection = () => {
                       <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
                         <FaEnvelope className="text-white/60" />
                       </div>
-                      <span className='text-lg md:text-2xl font-bold text-white tracking-wide'>{email}</span>
+                      <span className='text-sm sm:text-lg md:text-2xl font-bold text-white tracking-wide break-all sm:break-normal'>{email}</span>
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-3">

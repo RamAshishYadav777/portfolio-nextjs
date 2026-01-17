@@ -34,7 +34,7 @@ const WorkExperience = () => {
               <div className='inline-flex items-center gap-3 px-4 py-1.5 rounded-full glass border border-white/10 text-cyan-400 text-[10px] font-black uppercase tracking-[0.4em] mb-6'>
                 <FaBriefcase className="animate-pulse" /> Career History
               </div>
-              <h2 className='text-5xl md:text-8xl font-display font-black text-white leading-none mb-6'>
+              <h2 className='text-4xl md:text-8xl font-display font-black text-white leading-none mb-6'>
                 CAREER <br /> <span className='text-gradient'>MATRIX.</span>
               </h2>
               <p className='text-xl text-white/30 font-light leading-relaxed italic'>
@@ -58,7 +58,7 @@ const WorkExperience = () => {
                 </div>
 
                 {/* Main Card */}
-                <div className="md:ml-16 p-10 rounded-[2.5rem] glass glass-card border border-white/5 hover:border-cyan-500/30 transition-all duration-700 relative overflow-hidden group-hover:-translate-y-2 group-hover:shadow-[0_20px_60px_rgba(34,211,238,0.1)]">
+                <div className="md:ml-16 p-6 sm:p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] glass glass-card border border-white/5 hover:border-cyan-500/30 transition-all duration-700 relative overflow-hidden group-hover:-translate-y-2 group-hover:shadow-[0_20px_60px_rgba(34,211,238,0.1)]">
                   {/* Card Background Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
@@ -99,9 +99,9 @@ const WorkExperience = () => {
                     {/* Role Title */}
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <FaCode className="text-2xl text-cyan-400" />
+                        <FaCode className="text-xl md:text-2xl text-cyan-400" />
                       </div>
-                      <h3 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-400 transition-all">
+                      <h3 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-400 transition-all">
                         {item.role}
                       </h3>
                     </div>

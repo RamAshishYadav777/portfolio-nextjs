@@ -2,20 +2,20 @@
 
 import Image from "next/image";
 import React from "react";
-import { FaGithub, FaLinkedin, FaDownload, FaStar, FaCode, FaLaptopCode } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaDownload, FaStar, FaCode, FaLaptopCode, FaRocket } from "react-icons/fa";
 import { HiSparkles, HiLightningBolt } from "react-icons/hi";
 import { Typewriter } from 'react-simple-typewriter'
 import ScrollReveal from "./ScrollReveal";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative pt-40 pb-8 overflow-hidden min-h-screen flex items-center">
+    <section id="home" className="relative pt-36 md:pt-32 pb-8 overflow-hidden min-h-screen flex items-center">
       {/* Enhanced Moving Background Elements */}
       <div className="mesh-glow top-[-10%] left-[-10%] bg-cyan-500/20"></div>
       <div className="mesh-glow bottom-[10%] right-[10%] bg-indigo-500/20" style={{ animationDelay: '-5s' }}></div>
       <div className="mesh-glow top-[30%] right-[-5%] bg-purple-500/15" style={{ animationDelay: '-12s' }}></div>
       <div className="mesh-glow top-[50%] left-[20%] bg-amber-500/10" style={{ animationDelay: '-18s' }}></div>
-      <div className="absolute inset-0 bg-dot -z-20 opacity-30"></div>
+
 
       {/* Animated Grid Lines */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -29,14 +29,7 @@ const HeroSection = () => {
       <div className="absolute bottom-1/3 right-0 w-96 h-[1px] bg-gradient-to-r from-transparent via-purple-500/40 to-transparent animate-pulse" style={{ animationDelay: '-2s' }}></div>
       <div className="absolute top-2/3 left-0 w-48 h-[1px] bg-gradient-to-r from-transparent via-amber-500/30 to-transparent animate-pulse" style={{ animationDelay: '-4s' }}></div>
 
-      {/* Enhanced Floating Particles */}
-      <div className="absolute top-[20%] left-[10%] w-3 h-3 rounded-full bg-cyan-400/50 animate-bounce blur-[1px]" style={{ animationDuration: '4s', animationDelay: '0s' }}></div>
-      <div className="absolute top-[60%] left-[20%] w-2 h-2 rounded-full bg-purple-400/50 animate-bounce blur-[1px]" style={{ animationDuration: '5s', animationDelay: '1s' }}></div>
-      <div className="absolute top-[40%] right-[15%] w-3 h-3 rounded-full bg-amber-400/50 animate-bounce blur-[1px]" style={{ animationDuration: '6s', animationDelay: '2s' }}></div>
-      <div className="absolute top-[70%] right-[25%] w-2 h-2 rounded-full bg-cyan-400/50 animate-bounce blur-[1px]" style={{ animationDuration: '4.5s', animationDelay: '1.5s' }}></div>
-      <div className="absolute top-[30%] left-[30%] w-2 h-2 rounded-full bg-purple-400/50 animate-bounce blur-[1px]" style={{ animationDuration: '5.5s', animationDelay: '0.5s' }}></div>
-      <div className="absolute top-[15%] right-[30%] w-1.5 h-1.5 rounded-full bg-pink-400/50 animate-bounce blur-[1px]" style={{ animationDuration: '6.5s', animationDelay: '3s' }}></div>
-      <div className="absolute top-[80%] left-[40%] w-2.5 h-2.5 rounded-full bg-emerald-400/40 animate-bounce blur-[1px]" style={{ animationDuration: '5s', animationDelay: '2.5s' }}></div>
+
 
       {/* Floating Icons */}
       <div className="absolute top-[25%] right-[8%] text-cyan-500/20 animate-bounce hidden lg:block" style={{ animationDuration: '6s' }}>
@@ -47,11 +40,37 @@ const HeroSection = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 w-full relative">
-        <div className="flex flex-col lg:flex-row items-center justify-start gap-16 lg:gap-24">
+        {/* Status Badge - Top Center */}
+        <div className="flex justify-center w-full mb-12 md:mb-16">
+          <div className="relative group cursor-default">
+            {/* Background Glow */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-500 rounded-full blur opacity-20 group-hover:opacity-60 transition duration-500 animate-pulse"></div>
+
+            <div className="relative inline-flex items-center gap-3 px-8 py-3 rounded-full border border-emerald-500/30 bg-[#030014]/80 backdrop-blur-xl shadow-[0_0_20px_rgba(16,185,129,0.15)] group-hover:shadow-[0_0_40px_rgba(16,185,129,0.3)] transition-all duration-300 hover:scale-105 hover:border-emerald-400/50">
+              <span className="relative flex h-3 w-3">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 shadow-[0_0_10px_rgba(52,211,153,0.8)] border border-emerald-200"></span>
+              </span>
+
+              <span className="text-xs font-bold text-emerald-300 tracking-widest uppercase group-hover:text-emerald-200 transition-colors">
+                Available for Work
+              </span>
+
+              <FaRocket className="text-emerald-400 group-hover:text-emerald-200 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" size={12} />
+
+              {/* Shimmer Effect */}
+              <div className="absolute inset-0 rounded-full overflow-hidden">
+                <div className="absolute top-0 left-0 h-full w-12 bg-white/20 -skew-x-12 blur-md -translate-x-20 group-hover:animate-[shimmer_1s_infinite]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col lg:flex-row items-center justify-start gap-12 lg:gap-24 pt-10 lg:pt-0">
 
           {/* LEFT SIDE: Enhanced Avatar */}
           <ScrollReveal delay={0.1}>
-            <div className="relative group -mt-32 md:-mt-40">
+            <div className="relative group -mt-28 md:-mt-52">
               {/* Outer Glow Ring */}
               <div className="absolute -inset-4 rounded-[4rem] bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-amber-500/20 blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-1000"></div>
 
@@ -87,30 +106,39 @@ const HeroSection = () => {
           <ScrollReveal delay={0.3} className="lg:-ml-8 flex-1">
             <div className="text-left">
               {/* Status Badge */}
-              <div className="inline-flex items-center gap-4 px-6 py-2.5 rounded-full glass border border-green-500/20 text-[10px] font-black uppercase tracking-[0.4em] mb-10 text-green-400 relative overflow-hidden group/badge bg-green-500/5 hover:bg-green-500/10 transition-all cursor-default">
-                {/* Animated Background Shimmer */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-500/20 to-transparent translate-x-[-100%] group-hover/badge:translate-x-[100%] transition-transform duration-1000"></div>
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.8)]"></span>
-                </span>
-                <span className="relative z-10">Ready to Work</span>
-                <HiLightningBolt className="text-green-400 animate-pulse" />
-              </div>
+              {/* Status Badge */}
+
 
               {/* Decorative Line Above Name */}
-              <div className="flex items-center gap-4 mb-4">
-                <div className="h-[2px] w-16 bg-gradient-to-r from-transparent via-cyan-500 to-cyan-500/50"></div>
-                <div className="h-1.5 w-1.5 rounded-full bg-cyan-500 shadow-[0_0_8px_rgba(34,211,238,0.8)]"></div>
-                <div className="h-1 w-1 rounded-full bg-purple-500"></div>
+              {/* Decorative Line Above Name */}
+              {/* Decorative Line Above Name */}
+              <div className="flex items-center gap-3 mb-8 w-full max-w-lg">
+                <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-cyan-500/50 to-cyan-500 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-white/50 w-full -translate-x-full animate-[shimmer_2s_infinite]"></div>
+                </div>
+
+                <div className="px-4 py-1.5 rounded-sm border border-cyan-500/30 bg-cyan-950/30 backdrop-blur-md relative group/tag overflow-hidden">
+                  {/* Corner accents */}
+                  <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-cyan-400"></div>
+                  <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-cyan-400"></div>
+
+                  <div className="flex items-center gap-2">
+                    <span className="text-cyan-600 font-mono text-xs font-bold">{`<`}</span>
+                    <span className="text-[11px] font-mono font-bold text-cyan-300 tracking-[0.2em] uppercase glow-cyan">
+                      WEB DEVELOPER
+                    </span>
+                    <span className="text-cyan-600 font-mono text-xs font-bold">{`/>`}</span>
+                  </div>
+                </div>
+
+                <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-purple-500/50 to-cyan-500 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-white/50 w-full translate-x-full animate-[shimmer_2s_infinite_0.5s]"></div>
+                </div>
               </div>
 
-              <h1 className="text-6xl md:text-8xl font-display font-black text-white tracking-tight leading-[0.95] mb-8 relative">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black text-white tracking-tight leading-[0.95] mb-8 relative">
                 <span className="relative inline-block">
                   HI, I'M
-                  <div className="absolute -right-8 -top-4 text-cyan-500/30 animate-bounce hidden md:block" style={{ animationDuration: '3s' }}>
-                    <HiSparkles size={24} />
-                  </div>
                 </span>
                 <br />
                 <span className="relative inline-block group">

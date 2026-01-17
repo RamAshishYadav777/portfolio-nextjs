@@ -4,7 +4,7 @@ import React from 'react'
 import {
   SiMongodb, SiExpress, SiReact, SiNodedotjs,
   SiNextdotjs, SiTypescript, SiTailwindcss,
-  SiJavascript, SiSupabase, SiPrisma, SiGit
+  SiJavascript, SiSupabase, SiPrisma, SiGithub
 } from 'react-icons/si'
 import { FaVideo, FaCode, FaRocket } from 'react-icons/fa'
 import { MdPayment } from 'react-icons/md'
@@ -21,7 +21,7 @@ const TechStack = () => {
     { name: 'Tailwind', icon: SiTailwindcss, color: '#06B6D4', category: 'Styling', level: 92 },
     { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E', category: 'Language', level: 90 },
     { name: 'TypeScript', icon: SiTypescript, color: '#3178C6', category: 'Language', level: 78 },
-    { name: 'Git', icon: SiGit, color: '#F05032', category: 'DevOps', level: 85 },
+    { name: 'GitHub', icon: SiGithub, color: '#ffffff', category: 'DevOps', level: 85 },
     { name: 'Supabase', icon: SiSupabase, color: '#3ECF8E', category: 'Database', level: 80 },
     { name: 'Prisma', icon: SiPrisma, color: '#ffffff', category: 'ORM', level: 75 },
     { name: 'Material UI', icon: SiReact, color: '#0081CB', category: 'UI Library', level: 82 },

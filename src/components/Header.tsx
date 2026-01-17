@@ -14,6 +14,15 @@ const Header = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close menu when clicking outside
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isOpen]);
+
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "Work", href: "#work" },
@@ -32,7 +41,7 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Enhanced Branding */}
-        <Link href="/" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-3 group relative z-[110]">
           <div className="relative">
             {/* Glow Effect */}
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 to-amber-500/30 rounded-xl blur-md group-hover:blur-lg transition-all"></div>
@@ -80,28 +89,53 @@ const Header = () => {
         {/* Mobile menu trigger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden w-12 h-12 flex items-center justify-center rounded-2xl glass border border-white/10 text-white hover:border-cyan-500/50 transition-colors"
+          className="lg:hidden w-12 h-12 flex items-center justify-center rounded-2xl glass border border-white/10 text-white hover:border-cyan-500/50 transition-colors relative z-[110]"
         >
-          {isOpen ? <HiXMark size={24} /> : <HiBars3 size={24} />}
+          {isOpen ? <HiXMark size={24} className="relative z-[110]" /> : <HiBars3 size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-background/95 backdrop-blur-2xl z-[90] transition-all duration-500 lg:hidden ${isOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
+        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] lg:hidden transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
+        onClick={() => setIsOpen(false)}
+      />
+
+      {/* Mobile Menu Side Drawer */}
+      <div
+        className={`fixed top-0 right-0 h-full w-[300px] bg-[#030014] z-[100] border-l border-white/10 shadow-2xl transition-transform duration-300 lg:hidden transform ${isOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
-        <div className="flex flex-col items-center justify-center min-h-screen gap-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-4xl font-black text-white/40 hover:text-white transition-all uppercase tracking-tighter"
-              onClick={() => setIsOpen(false)}
-            >
-              {link.name}
-            </Link>
-          ))}
+        <div className="h-full flex flex-col justify-center p-8 relative">
+          {/* Background Grid */}
+          <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/20 blur-[100px] rounded-full pointer-events-none"></div>
+
+          <div className="flex flex-col gap-8 relative z-10">
+            {navLinks.map((link, index) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-2xl font-black text-white/40 hover:text-white transition-all uppercase tracking-widest flex items-center gap-4 group"
+                onClick={() => setIsOpen(false)}
+                style={{ transitionDelay: `${index * 50}ms` }}
+              >
+                <span className="w-8 h-[1px] bg-white/10 group-hover:bg-cyan-400 group-hover:w-12 transition-all"></span>
+                {link.name}
+              </Link>
+            ))}
+
+            <div className="pt-8 mt-8 border-t border-white/10">
+              <a
+                href="#contact"
+                onClick={() => setIsOpen(false)}
+                className="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-purple-500 to-amber-500 text-white text-[10px] font-black uppercase tracking-[0.2em] hover:scale-105 transition-all shadow-lg shadow-purple-500/20 flex items-center justify-center gap-2"
+              >
+                Hire Me
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </header>
